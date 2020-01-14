@@ -47,6 +47,3 @@ class Item:
 # //---------// //---------// //---------//
 # Main function statements
 # //---------// //---------// //---------//
-item = Item()
-item.setCostType("pp")
-item.printItem()
