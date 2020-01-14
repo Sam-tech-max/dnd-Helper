@@ -14,10 +14,10 @@ class Tool(Item.Item):
 # //---------// //---------// //---------//
 	def getWeight(self):
 		return self.weight
+		
+	def setWeight(self, weight):
+		self.weight = weight
 
 # //---------// //---------// //---------//
 # Main function statements
 # //---------// //---------// //---------//
-
-tool = Tool()
-tool.printTool()
