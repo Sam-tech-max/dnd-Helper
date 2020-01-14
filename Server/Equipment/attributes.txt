@@ -1,0 +1,17 @@
+attruibutes of equitment:
+Armor:
+name, cost, armor class(AC), strength, stealth, weight
+Weapons:
+name, cost, damage, weight, properties
+Adventuring Gear:
+name, cost, weight
+Tools:
+name, cost, weight
+Mounts and other Animals:
+name, cost, speed, carrying capacity
+Tack, Harness, and Drawn Vehicles:
+name, cost, weight
+Waterborne Vehicles:
+name, cost, speed
+Food, Drink, and Lodging:
+name, cost
