@@ -39,6 +39,3 @@ class Weapon(Tool.Tool):
 # //---------// //---------// //---------//
 # Main function statements
 # //---------// //---------// //---------//
-
-weapon = Weapon()
-weapon.printWeapon()

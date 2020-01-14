@@ -41,6 +41,3 @@ class Armor(Tool.Tool):
 # //---------// //---------// //---------//
 # Main function statements
 # //---------// //---------// //---------//
-
-armor = Armor()
-armor.printArmor()

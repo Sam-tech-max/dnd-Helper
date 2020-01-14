@@ -1,0 +1,39 @@
+name,weaponType,cost,damage,damageType,weight,properties
+club,simple melee,1 sp,1d4,bludgeoning,2 lb,light
+dagger,simple melee,2 gp,1d4,piercing,1 lb,finesse light thrown (range 20/60)
+greatclub,simple melee,2 sp,1d8,bludgeoning,10 lb,Two-handed
+handaxe,simple melee,5 gp,1d6,slashing,2 lb,light thrown (range 20/60)
+javelin,simple melee,5 sp,1d6,piercing,2 lb,thrown (range 30/120)
+light hammer,simple melee,2 gp,1d4,bludgeoning,2 lb,light thrown (range 20/60)
+mace,simple melee,5 gp,1d6,bludgeoning,4 lb,null
+quarterstaff,simple melee,2 sp,1d6,bludgeoning,4 lb,versatile (1d8)
+sickle,simple melee,1 gp,1d4,slashing,2 lb,light
+spear,simple melee,1 gp,1d6,piercing,3 lb,thrown (range 20/60) versatile (1d8)
+unarmed strike,simple melee,0 gp,1,bludgeoning,0 lb,null
+light crossbow,simple ranged,25 gp,1d8,piercing,5 lb,ammunition (range 80/320) loading two-handed
+dart,simple ranged,5 cp,1d4,piercing,1/4 lb,finesse thrown (range 20/60)
+shortbow,simple ranged,25 gp,1d6,piercing,2 lb,ammunition (range 80/320) two-handed
+sling,simple ranged,1 sp,1d4,bludgeoning,0 lb,ammunition (range 30/120)
+battleaxe,martial melee,10 gp,1d8,slashing,4 lb,versatile (1d10)
+flail,martial melee,10 gp,1d8,bludgeoning,2 lb,null
+glaive,martial melee,20 gp,1d10,slashing,6 lb,heavy reach two-handed
+greataxe,martial melee,30 gp,1d12,slashing,7 lb,heavy two-handed
+greatsword,martial melee,50 gp,2d6,slashing,6 lb,heavy two-handed
+halberd,martial melee,20 gp,1d10,slashing,6 lb,heavy reach two-handed
+lance,martial melee,10 gp,1d12,piercing,6 lb,reach special
+longsword,martial melee,15 gp,1d8,slashing,3 lb,versatile (1d10)
+maul,martial melee,10 gp,2d6,bludgeoning,10 lb,heavy two-handed
+morningstar,martial melee,15 gp,1d8,piercing,4 lb,null
+pike,martial melee,5 gp,1d10,piercing,18 lb,heavy reach two-handed
+rapier,martial melee,25 gp,1d8,piercing,2 lb,finesse
+scimitar,martial melee,25 gp,1d6,slashing,3 lb,finesse light
+shortsword,martial melee,10 gp,1d6,piercing,2 lb,finesse light
+trident,martial melee,5 gp,1d6,piercing,4 lb,thrown (range 20/60) versatile (1d8)
+war pick,martial melee,5 gp,1d8,piercing,2 lb,null
+warhammer,martial melee,15 gp,1d8,bludgeoning,2 lb,versatile (1d10)
+whip,martial melee,2 gp,1d4,slashing,3 lb,finesse reach
+blowgun,martial ranged,10 gp,1,piercing,1 lb,ammunition (range 25/100) loading
+hand crossbow,martial ranged,75 gp,1d6,piercing,3 lb,ammunition (range 30/120) light loading
+heavy crossbow,martial ranged,50 gp,1d10,piercing,18 lb,ammunition (range 100/400) heavy loading two-handed
+longbow,martial ranged,50 gp,1d8,piercing,2 lb,ammunition (range 150/600) heavy two-handed
+net,martial ranged,1 gp,0,null,3 lb,special thrown (range 5/15)

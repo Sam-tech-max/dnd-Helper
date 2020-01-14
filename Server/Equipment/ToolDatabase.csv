@@ -1,0 +1,139 @@
+name,toolType,cost,weight
+abacus,generic,2 gp,2 lb
+acid (vial),generic,25 gp,1 lb
+alchemist’s fire (flask),generic,50 gp,1 lb
+arrows (20),ammunition,1 gp,1 lb
+blowgun needles (50),ammunition,1 gp,1 lb
+crossbow bolts (20),ammunition,1 gp,1 1/2 lb
+sling bullets (20),ammunition,4 cp,1 1/2 lb
+antitoxin (vial),generic,50 gp,0 lb
+crystal,arcane focus,10 gp,1 lb
+orb,arcane focus,20 gp,3 lb
+rod,arcane focus,10 gp,2 lb
+staff,arcane focus,5 gp,4 lb
+wand,arcane focus,10 gp,1 lb
+backpack,generic,2 gp,5 lb
+ball bearings (bag of 1000),generic,1 gp,2 lb
+barrel,generic,2 gp,70 lb
+basket,generic,4 sp,2 lb
+bedroll,generic,1 gp,7 lb
+bell,generic,1 gp,0 lb
+blanket,generic,5 sp,3 lb
+block and tackle,generic,1 gp,5 lb
+book,generic,25 gp,5 lb
+glass bottle,generic,2 gp,2 lb
+bucket,generic,5 cp,2 lb
+caltrops (bag of 20),generic,1 gp,2 lb
+candle,generic,1 cp,0 lb
+crossbow bolt case,generic,1 gp,1 lb
+map case,generic,1 gp,1 lb
+scroll case,generic,1 gp,1 lb
+chain (10 feet),generic,5 gp,10 lb
+chalk (1 piece),generic,1 cp,0 lb
+chest,generic,5 gp,25 lb
+climber's kit,generic,25 gp,12 lb
+common clothes,generic,5 sp,3 lb
+costume clothes,generic,5 gp,4 lb
+fine clothes,generic,15 gp,6 lb
+traveler's clothes,generic,2 gp,4 lb
+component pouch,generic,25 gp,2 lb
+crowbar,generic,2 gp,5 lb
+sprig of mistletoe,druidic focus,1 gp,0 lb
+totem,druidic focus,1 gp,0 lb
+wooden staff,druidic focus,5 gp,4 lb
+yew wand,druidic focus,10 gp,1 lb
+fishing tackle,generic,1 gp,4 lb
+flask,generic,2 cp,1 lb
+tankard,generic,2 cp,1 lb
+grappling hook,generic,2 gp,4 lb
+hammer,generic,1 gp,3 lb
+sledge hammer,generic,2 gp,10 lb
+healer’s kit,generic,5 gp,3 lb
+amulet,holy symbol,5 gp,1 lb
+emblem,holy symbol,5 gp,0 lb
+reliquary,holy symbol,5 gp,2 lb
+holy water (flask),generic,25 gp,1 lb
+hourglass,generic,25 gp,1 lb
+hunting trap,generic,5 gp,25 lb
+ink (1 ounce bottle),generic,10 gp,0 lb
+ink pen,generic,2 cp, 0 lb
+jug or pitcher,generic,2 cp,4 lb
+ladder (10-foot),generic,1 sp,25 lb
+lamp,generic,5 sp,1 lb
+bullseye lantern,generic,10 gp,2 lb
+hooded lantern,generic,5 gp,2 lb
+lock,generic,10 gp,1 lb
+magnifying glass,generic,100 gp,0 lb
+manacles,generic,2 gp,6 lb
+mess kit,generic,2 sp,1 lb
+steel mirror,generic,5 gp,1/2 lb
+oil (flask),generic,1 sp,1 lb
+paper (one sheet),generic,2 sp,0 lb
+parchment (one sheet),generic,1 sp,0 lb
+perfume (vial),generic,5 gp,0 lb
+miner's pick,generic,2 gp,10 lb
+piton,generic,5 cp,1/4 lb
+basic (vial) poison,generic,100 gp,0 lb
+pole (10-foot),generic,5 cp,7 lb
+iron pot,generic,2 gp,10 lb
+potion of healing,generic,50 gp,1/2 lb
+pouch,generic,5 sp,1 lb
+quiver,generic,1 gp,1 lb
+portable ram,generic,4 gp,35 lb
+rations (1 day),generic,5 sp,2 lb
+robes,generic,1 gp,4 lb
+hempen rope (50 feet),generic,1 gp,10 lb
+silk rope (50 feet),generic,10 gp,5 lb
+sack,generic,1 cp,1/2 lb
+merchant's scale,generic,5 gp,3 lb
+sealing wax,generic,5 sp, 0 lb
+shovel,generic,2 gp,5 lb
+signal whistle,generic,5 cp,0 lb
+signet ring,generic,5 gp,0 lb
+soap,generic,2 cp,0 lb
+spellbook,generic,50 gp,3 lb
+iron spikes (10),generic,1 gp,5 lb
+spyglass,generic,1000 gp,1 lb
+two-person tent,generic,2 gp,20 lb
+tinderbox,generic,5 sp,1 lb
+torch,generic,1 cp,1 lb
+vial,generic,1 gp,0 lb
+waterskin,generic,2 sp,5 lb (full)
+whetstone,generic,1 cp,1 lb
+alchemist’s supplies,artisan’s tools,50 gp,8 lb
+brewer’s supplies,artisan’s tools,20 gp,9 lb
+calligrapher's supplies,artisan’s tools,10 gp,5 lb
+carpenter’s tools,artisan’s tools,8 gp,6 lb
+cartographer’s tools,artisan’s tools,15 gp,6 lb
+cobbler’s tools,artisan’s tools,5 gp,5 lb
+cook’s utensils,artisan’s tools,1 gp,8 lb
+glassblower’s tools,artisan’s tools,30 gp,5 lb
+jeweler’s tools,artisan’s tools,25 gp,2 lb
+leatherworker’s tools,artisan’s tools,5 gp,5 lb
+mason’s tools,artisan’s tools,10 gp,8 lb
+painter’s supplies,artisan’s tools,10 gp,5 lb
+potter’s tools,artisan’s tools,10 gp,3 lb
+smith’s tools,artisan’s tools,20 gp,8 lb
+tinker’s tools,artisan’s tools,50 gp,10 lb
+weaver’s tools,artisan’s tools,1 gp,5 lb
+woodcarver's tools,artisan’s tools,1 gp,5 lb
+disguise kit,generic,25 gp,3 lb
+forgery kit,generic,15 gp,5 lb
+dice set,gaming set,1 sp,0 lb
+dragonchess set,gaming set,1 gp,1/2 lb
+playing card set,gaming set,5 sp,0 lb
+three-dragon ante set,gaming set,1 gp,0 lb
+herbalism kit,generic,5 gp,3 lb
+bagpipes,musical instrument,30 gp,6 lb
+drum,musical instrument,6 gp,3 lb
+dulcimer,musical instrument,25 gp,10 lb
+flute,musical instrument,2 gp,1 lb
+lute,musical instrument,35 gp,2 lb
+lyre,musical instrument,30 gp,2 lb
+horn,musical instrument,3 gp,2 lb
+pan flute,musical instrument,12 gp,2 lb
+shawm,musical instrument,2 gp,1 lb
+viol,musical instrument,30 gp,1 lb
+navigator’s tools,musical instrument,25 gp,2 lb
+poisoner’s kit,musical instrument,50 gp,2 lb
+thieves’ tools,musical instrument,25 gp,1 lb

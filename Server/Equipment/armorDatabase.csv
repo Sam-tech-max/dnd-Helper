@@ -1,0 +1,14 @@
+name,armorType,cost,armorClass,strength,disadvantageOnStealth,weight
+padded,light,5 gp,11 + dex modifier,null,True,8 lb
+leather,light,10 gp,11 + dex modifier,null,False,10 lb
+studded leather,light,45 gp,12 + dex modifier,null,False,13 lb
+hide,medium,10 gp,12 + dex modifier (max 2),null,False,12 lb
+chain shirt,medium,50 gp,13 + dex modifier (max 2),null,False,20 lb
+scale mail,medium,50 gp,14 + dex modifier (max 2),null,True,45 lb
+breastplate,medium,400 gp,14 + dex modifier (max 2),null,False,20 lb
+half plate,medium,750 gp,15 + dex modifier (max 2),null,True,40 lb
+ring mail,heavy,30 gp,14,null,True,40 lb
+chain mail,heavy,75 gp,16,str 13,True,55 lb
+splint,heavy,200 gp,17,str 15,True,60 lb
+plate,heavy,1500 gp,18,str 15,True,65 lb
+shield,shield,10 gp,+2,null,False,6 lb
