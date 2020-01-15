@@ -94,6 +94,7 @@ class Stats:
 		for stat in self.stats:
 			if(stat.getName() == name):
 				return stat
+		self.calculateMods()
 		return Stat()
 		
 	def setStat(self, stat):
@@ -103,6 +104,7 @@ class Stats:
 				each.setScore(stat.getScore())
 				each.setMod(stat.getMod())
 				each.setHasProficiency(stat.getHasProficiency())
+		self.calculateMods()
 
 # //---------// //---------// //---------//
 # These are the other functions associtated
@@ -110,6 +112,7 @@ class Stats:
 # //---------// //---------// //---------//
 		
 	def printStats(self):
+		self.calculateMods()
 		print("The Stats for your Character are:")
 		print("Proficiency Bonus: " + str(self.proficienyBonus))
 		for stat in self.stats:

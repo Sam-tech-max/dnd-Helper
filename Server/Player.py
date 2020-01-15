@@ -126,6 +126,18 @@ class Player:
 	def setRace(self, race):
 		self.race = race
 		
+	def getStats(self):
+		return self.stats
+		
+	def setStats(self, stats):
+		self.stats = stats
+		
+	def getSpeed(self):
+		return self.speed
+		
+	def setSpeed(self, speed):
+		self.speed = speed
+		
 # //---------// //---------// //---------//
 # Other function statements with player class
 # //---------// //---------// //---------//
