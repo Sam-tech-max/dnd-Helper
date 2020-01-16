@@ -12,10 +12,12 @@ class Player:
 
 	def __init__(self, characterName="John Doe", classRole="fighter",
 	level=1, background="Hermit", playerName="Odin", race="Elf",
-	alignment="true neutral", experiencePoints=0, proficiencyBonus=0,
-	inspiration=0, armorClass=0, initiative=0, speed=0, hitPoints=0,
-	hitDie="1d6", age=20, strength=15, dexterity=14, constitution=13,
-	intelligence=12, wisdom=10, charisma=8):
+	subrace="Wood",	alignment="true neutral", experiencePoints=0,
+	proficiencyBonus=0,	inspiration=0, armorClass=0, initiative=0,
+	speed=0, hitPoints=0, hitDie="1d6", age=20, height=68, weight=150,
+	darkvision=0, size="medium", gender="male", strength=15,
+	dexterity=14, constitution=13, intelligence=12, wisdom=10,
+	charisma=8):
 		# String Types
 		self.alignment = alignment
 		self.background = background
@@ -24,52 +26,72 @@ class Player:
 		self.hitDie = hitDie
 		self.playerName = playerName
 		self.race = race
+		self.subrace = subrace
+		self.gender = gender
 		# Integer Types
 		self.age = age
 		self.armorClass = armorClass
+		self.darkvision = darkvision
 		self.experiencePoints = experiencePoints
+		self.height = height
 		self.hitPoints = hitPoints
 		self.inspiration = inspiration
 		self.initiative = initiative
 		self.level = level
 		self.proficiencyBonus = proficiencyBonus
+		self.size = size
 		self.speed = speed
+		self.weight = weight
 		# Stats type: Strength, Dexiterity, Consititution, Intelligence,
 		# Wisdom, Charisma, and Proficiency Bonus are within this class. 
 		self.stats = Stats.Stats(proficiencyBonus, strength, dexterity,
 		constitution, intelligence, wisdom, charisma)
 		# updates the modifiers
 		self.stats.calculateMods()
+		# string arrary for proficiencies and languages
+		self.proficiencies = list()
 	
 	#Stuff to do:
 	# armorClass, initiative, speed, hitpoints, hitDie
 	def printPlayer(self, withStats=True):
 		print("//----------// Character Attributes //----------//")
-		print("Character Name: " + self.characterName)
-		print("Class: " + self.classRole)
-		print("Level: " + str(self.level))
-		print("Background: " + self.background)
-		print("Player Name: " + self.playerName)
-		print("Race: " + self.race)
-		print("Alignment: " + self.alignment)
-		print("Experience Points: " + str(self.experiencePoints))
-		print("Proficiency Bonus: " + str(self.proficiencyBonus))
-		print("Inspiration: " + str(self.inspiration))
-		print("Armor Class: " + str(self.armorClass))
-		print("Initiative: " + str(self.initiative))
-		print("Speed: " + str(self.speed))
-		print("Hit Points: " + str(self.hitPoints))
-		print("Hit Die: " + self.hitDie)
-		print("Age: " + str(self.age))
+		print("Character Name:", self.getCharacterName())
+		print("Class:", self.getClassRole())
+		print("Level:", self.getLevel())
+		print("Background:", self.getBackground())
+		print("Player Name:", self.getPlayerName())
+		print("Race:", self.getSubrace(),self.getRace())
+		print("Alignment:", self.getAlignment())
+		print("Experience Points:", self.getExperiencePoints())
+		print("Proficiency Bonus:", self.getProficiencyBonus())
+		print("Inspiration:", self.getInspiration())
+		print("Armor Class:", self.getArmorClass())
+		print("Initiative:", self.getInitiative())
+		print("Speed:", self.getSpeed())
+		print("Darkvision:", self.getDarkvision(), "ft")
+		print("Hit Points:", self.getHitPoints())
+		print("Hit Die:", self.getHitDie())
+		print("Age:", self.getAge())
+		print("Height:", self.getHeight(), "in")
+		print("Weight:", self.getWeight(), "lb")
+		print("Size:", self.getSize())
+		self.printProficiencies()
 		if(withStats):
-			self.stats.printStats()
+			self.getStats().printStats()
 		print("//----------// //----------// //----------//")
 		
+	def printProficiencies(self):
+		if(len(self.getProficiencies()) > 0):
+			print("//----------// //----------//")
+			pro = ""
+			for each in self.getProficiencies():
+				pro += each + ", "
+			print("You Have Proficiencies in:", pro)
 # //---------// //---------// //---------//
 # These are the get and set methods
 # //---------// //---------// //---------//
 	#Stuff to do:
-	# experiencePoints, proficiencyBounus, inspiration, armorClass, initiative, speed, hitpoints, hitDie
+	#initiative, speed, hitpoints, hitDie
 	def getAge(self):
 		return self.age
 
@@ -84,6 +106,12 @@ class Player:
 	
 	def setAlignment(self, alignment):
 		self.alignment = alignment
+		
+	def getArmorClass(self):
+		return self.armorClass
+		
+	def setArmorClass(self,armorClass):
+		self.armorClass = armorClass
 		
 	def getBackground(self):
 		return self.background
@@ -102,8 +130,54 @@ class Player:
 		
 	def setClassRole(self, classRole):
 		return self.classRole
+		
+	def getDarkvision(self):
+		return self.darkvision
+		
+	def setDarkvision(self, darkvision):
+		self.darkvision = darkvision
+		
+	def getExperiencePoints(self):
+		return self.experiencePoints
+		
+	def setExperiencePoints(self, experiencePoints):
+		self.experiencePoints = experiencePoints
+		
+	def getGender(self):
+		return self.gender
+		
+	def setGender(self, gender):
+		self.gender = gender
+		
+	def getHeight(self):
+		return self.height
+		
+	def setHeight(self, height):
+		self.height = height
+		
+	def getHitDie(self):
+		return self.hitDie
+		
+	def setHitDie(self, hitDie):
+		self.hitDie = hitDie
+		
+	def getHitPoints(self):
+		return self.hitPoints
+		
+	def setHitPoints(self, hitPoints):
+		self.hitPoints = hitPoints
+		
+	def getInitiative(self):
+		return self.initiative
+		
+	def setInitiative(self, initiative):
+		self.initiative = initiative
 
-	# Inspiration
+	def getInspiration(self):
+		return self.inspiration
+		
+	def setInspiration(self, inspiration):
+		self.inspiration = inspiration
 
 	def getLevel(self):
 		return self.level
@@ -119,6 +193,30 @@ class Player:
 	
 	def setPlayerName(self, playerName):
 		self.playerName = playerName
+		
+	def getProficiencies(self):
+		return self.proficiencies
+		
+	def setProficiencies(self,proficiencies):
+		self.proficiencies = proficiencies
+		
+	def isProficiency(self, proficiencyName):
+		for each in self.getProficiencies():
+			if(each == proficiencyName):
+				return True
+		return False
+		
+	def addProficiency(self, proficiencyName):
+		if(not self.isProficiency(proficiencyName)):
+			proficiencies = self.getProficiencies()
+			proficiencies.append(proficiencyName)
+			self.setProficiencies(proficiencies)
+		
+	def getProficiencyBonus(self):
+		return self.proficiencyBonus
+		
+	def setProficiencyBonus(self, proficiencyBonus):
+		self.proficiencyBonus = proficiencyBonus
 
 	def getRace(self):
 		return self.race
@@ -126,17 +224,41 @@ class Player:
 	def setRace(self, race):
 		self.race = race
 		
+	def getSize(self):
+		return self.size
+		
+	def setSize(self, size):
+		self.size = size
+			
+	def getSpeed(self):
+		return self.speed
+		
+	def setSpeed(self, speed):
+		self.speed = speed
+			
 	def getStats(self):
 		return self.stats
 		
 	def setStats(self, stats):
 		self.stats = stats
 		
-	def getSpeed(self):
-		return self.speed
+	def getStat(self, name):
+		return self.stats.getStat(name)
 		
-	def setSpeed(self, speed):
-		self.speed = speed
+	def setStat(self, stat):
+		self.stats.setStat(stat)
+		
+	def getSubrace(self):
+		return self.subrace
+		
+	def setSubrace(self, subrace):
+		self.subrace = subrace
+
+	def getWeight(self):
+		return self.weight
+		
+	def setWeight(self, weight):
+		self.weight = weight
 		
 # //---------// //---------// //---------//
 # Other function statements with player class
@@ -148,3 +270,5 @@ class Player:
 # //---------// //---------// //---------//
 # Main function statements
 # //---------// //---------// //---------//
+#player = Player()
+#player.printPlayer(False)
