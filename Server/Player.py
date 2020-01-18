@@ -50,6 +50,8 @@ class Player:
 		self.stats.calculateMods()
 		# string arrary for proficiencies and languages
 		self.proficiencies = list()
+		# Features and Traits
+		self.features = list()
 	
 	#Stuff to do:
 	# armorClass, initiative, speed, hitpoints, hitDie
@@ -76,9 +78,18 @@ class Player:
 		print("Weight:", self.getWeight(), "lb")
 		print("Size:", self.getSize())
 		self.printProficiencies()
+		self.printFeatures()
 		if(withStats):
 			self.getStats().printStats()
 		print("//----------// //----------// //----------//")
+		
+	def printFeatures(self):
+		if(len(self.getFeatures()) > 0):
+			print("//----------// //----------//")
+			fea = ""
+			for each in self.getFeatures():
+				fea += each + ", "
+			print("Your Features and Traits are:", fea)
 		
 	def printProficiencies(self):
 		if(len(self.getProficiencies()) > 0):
@@ -92,44 +103,41 @@ class Player:
 # //---------// //---------// //---------//
 	#Stuff to do:
 	#initiative, speed, hitpoints, hitDie
-	def getAge(self):
+	def getAge(self) -> int:
 		return self.age
 
-	def setAge(self, age):
-		if('int' in str(type(age))):
-			self.age = age
-		else:
-			print("Error :: incorrect type value :: need int")
-		
-	def getAlignment(self):
+	def setAge(self, age:int):
+		self.age = age
+				
+	def getAlignment(self) -> str:
 		return self.alignment
 	
-	def setAlignment(self, alignment):
+	def setAlignment(self, alignment: str):
 		self.alignment = alignment
 		
-	def getArmorClass(self):
+	def getArmorClass(self) -> int:
 		return self.armorClass
 		
-	def setArmorClass(self,armorClass):
+	def setArmorClass(self,armorClass: int):
 		self.armorClass = armorClass
 		
-	def getBackground(self):
+	def getBackground(self) -> str:
 		return self.background
 		
-	def setBackground(self, background):
+	def setBackground(self, background: str):
 		self.background = background
 		
-	def getCharacterName(self):
+	def getCharacterName(self) -> str:
 		return self.characterName
 		
-	def setCharacterName(self, characterName):
+	def setCharacterName(self, characterName: str):
 		self.characterName = characterName
 
-	def getClassRole(self):
+	def getClassRole(self) -> str:
 		return self.classRole
 		
-	def setClassRole(self, classRole):
-		return self.classRole
+	def setClassRole(self, classRole: str):
+		self.classRole = classRole
 		
 	def getDarkvision(self):
 		return self.darkvision
@@ -142,6 +150,17 @@ class Player:
 		
 	def setExperiencePoints(self, experiencePoints):
 		self.experiencePoints = experiencePoints
+		
+	def getFeatures(self):
+		return self.features
+		
+	def setFeatures(self, features):
+		self.features = features
+		
+	def addFeatures(self, featureName):
+		features = self.getFeatures()
+		features.append(featureName)
+		self.setFeatures(features)
 		
 	def getGender(self):
 		return self.gender
@@ -209,7 +228,7 @@ class Player:
 	def addProficiency(self, proficiencyName):
 		if(not self.isProficiency(proficiencyName)):
 			proficiencies = self.getProficiencies()
-			proficiencies.append(proficiencyName)
+			proficiencies.append(str(proficiencyName))
 			self.setProficiencies(proficiencies)
 		
 	def getProficiencyBonus(self):
