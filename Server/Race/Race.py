@@ -1,5 +1,21 @@
 import Stats as s
 
+def chooseLanguage(l: str = "empty")->str:
+    l = l.lower()
+    if (l == "abyssal" or l == "aquan" or l == "auran" or
+             l == "celestial" or l == "common" or l == "deep" or
+             l == "draconic" or l == "druidic" or l == "dwarvish" or
+             l == "elvish" or l == "giant" or l == "gnomish" or
+             l == "goblin" or l == "gnoll" or l == "halfling" or
+             l == "ignan" or l == "infernal" or l == "orc" or
+             l == "primordial" or l == "sylvan" or l == "terran" or
+             l == "undercommon"):
+        return " " + l
+    else:
+        print("Please choose from the following languages:")
+        l = str(input("abyssal, aquan, auran, celestial, common, deep, draconic, druidic, dwarvish elvish, giant, gnomish, goblin, gnoll, halfling, ignan, infernal, orc, primordial, sylvan, terran, or undercommon: "))
+        return chooseLanguage(l)
+
 class Race(object):
     def __init__(self, race="", age: int=0, alignment: str="true neutral",
                  height: int=0, languages:str="empty",

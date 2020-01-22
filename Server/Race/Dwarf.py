@@ -21,8 +21,14 @@ class Dwarf(r.Race):
         stats.setStat(con)
         if(super().getSubrace() == "hill"):
             print("Your Wisdom score increases by 1.")
+            wis = stats.getStat("wisdom")
+            wis.setScore(wis.getScore() + 1)
+            stats.setStat(wis)
         elif(super().getSubrace() == "mountain"):
             print("Your Strength score increases by 2")
+            strength = stats.getStat("strength")
+            strength.setScore(strength.getScore() + 2)
+            stats.setStat(strength)
         super().setStats(stats)
 
 #//----------// //----------// //----------//
@@ -116,3 +122,4 @@ class Dwarf(r.Race):
 d = Dwarf()
 d.printDwarf()
 d.abilityScoreIncrease()
+d.printDwarf()
