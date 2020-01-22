@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Dwarf.py" Bounds="-5.12456325689952,-26.7518975206091,66.5833333333333,25.96" Label="Dwarf.py" />
+    <Node Id="Race.py" Bounds="-2.11456325689953,-82.7118975206092,60.5633333333333,25.96" />
+    <Node Id="d33f281d-df6a-4fc9-92e9-78fba42bb24a" Bounds="-25.1245632568995,-122.711897520609,106.583333333333,141.92" Group="Expanded" Label="New Group" UseManualLocation="True" />
+  </Nodes>
+  <Links>
+    <Link Source="Race.py" Target="Dwarf.py" Bounds="28.1671028137207,-56.751895904541,0,21" />
+    <Link Source="d33f281d-df6a-4fc9-92e9-78fba42bb24a" Target="Dwarf.py" Category="Contains" />
+    <Link Source="d33f281d-df6a-4fc9-92e9-78fba42bb24a" Target="Race.py" Category="Contains" />
+  </Links>
+  <Categories>
+    <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+  </Properties>
+</DirectedGraph>
