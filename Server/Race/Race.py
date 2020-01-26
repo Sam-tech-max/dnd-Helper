@@ -16,15 +16,30 @@ def chooseLanguage(l: str = "empty")->str:
         l = str(input("abyssal, aquan, auran, celestial, common, deep, draconic, druidic, dwarvish elvish, giant, gnomish, goblin, gnoll, halfling, ignan, infernal, orc, primordial, sylvan, terran, or undercommon: "))
         return chooseLanguage(l)
 
+def chooseStat(s: str = "empty")->str:
+    s = s.lower()
+    if (s == "strength" or s == "dexterity" or s == "constitution" or
+        s == "intelligence" or s == "wisdom" or s == "charisma"):
+        return s
+    else:
+        print("Please choose from the following stats to improve:")
+        s = str(input("strength, dexterity, constitution, intelligence, wisdom or charisma: "))
+        return chooseStat(s)
+
 class Race(object):
-    def __init__(self, race="", age: int=0, alignment: str="true neutral",
-                 height: int=0, languages:str="empty",
-                 size: str="tiny", stats: s.Stats=s.Stats(), speed: int=30, subrace: str=" ",
-                 weight: int=0):
+    def __init__(self, race="", age: int=0,
+                 alignment: str="true neutral", height: int=0,
+                 languages:str="empty", size: str="tiny",
+                 stats: s.Stats=s.Stats(), speed: int=30,
+                 subrace: str=" ", weight: int=0, gender: str="male",
+                 firstName: str="", lastName: str=""):
         self.age = age
         self.alignment = alignment.lower()
+        self.firstName = firstName.lower()
+        self.gender = gender.lower()
         self.height = height
         self.languages = languages.lower()
+        self.lastName = lastName.lower()
         self.size = size.lower()
         self.stats = stats
         self.speed = speed
@@ -38,7 +53,10 @@ class Race(object):
 # variables.
 #//----------// //----------// //----------//
     def printRace(self, printStat: bool=True):
+        print("Character Name:", self.getFirstName(),
+              self.getLastName())
         print("Race:", self.getRace())
+        print("Gender:", self.getGender())
         print("Age:", self.getAge())
         print("Alignment:",self.getAlignment())
         print("Size:",self.getSize())
@@ -65,6 +83,16 @@ class Race(object):
              a == "true neutral" or a == "neutral evil" or
              a == "chaotic good" or a == "chaotic neutral" or
              a == "chaotic evil"):
+            return True
+        else:
+            return False
+
+    def checkGender(self, gender: str="empty") -> bool:
+        g = gender.lower()
+        if(g == "empty"):
+            print("empty")
+            return False
+        elif(g == "female" or g == "male"):
             return True
         else:
             return False
@@ -130,6 +158,30 @@ class Race(object):
             self.alignment = alignment.lower()
         elif(not self.checkAlignment(self.getAlignment())):
             self.alignment = "true neutral"
+
+    def getGender(self) -> str:
+        return self.gender
+
+    def setGender(self, gender: str):
+        if(self.checkGender()):
+            self.gender = gender
+        elif(self.checkGender(self.getGender())):
+            print("Not male or Female for gender.")
+        else:
+            self.gender = "male"
+            print("Set gender to male.")
+
+    def getFirstName(self) -> str:
+        return self.firstName
+
+    def setFirstName(self, firstName: str):
+        self.firstName = firstName
+
+    def getLastName(self) -> str:
+        return self.lastName
+
+    def setLastName(self, lastName: str):
+        self.lastName = lastName
 
     def getSize(self) -> str:
         return self.size

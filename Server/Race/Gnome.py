@@ -4,10 +4,16 @@ import Stats as s
 class Gnome(r.Race):
     def __init__(self, age: int=40, alignment: str="neutral good",
                  height: int=36, stats: s.Stats=s.Stats(),
-                 subrace: str="forest", weight: int=40):
+                 subrace: str="forest", weight: int=40,
+                 gender: str="male", firstName: str="alston",
+                 lastName: str="beren", nickName: str="aleslosh"):
         subrace = subrace.lower()
-        super().__init__("Gnome", age, alignment, height, "common gnomish", "small", stats, 25, subrace, weight)
+        super().__init__("Gnome", age, alignment, height,
+                         "common gnomish", "small", stats, 25,
+                         subrace, weight, gender, firstName,
+                         lastName)
         self.darkvision = 60
+        self.nickName = nickName.lower()
 
 
 #//----------// //----------// //----------//
@@ -37,7 +43,8 @@ class Gnome(r.Race):
 # These methods will print out all of the
 # variables.
 #//----------// //----------// //----------//
-    def printGnome(self, showStats: bool):
+    def printRace(self, showStats: bool):
+        print("NickName:", self.getNickName())
         super().printRace(showStats)
         print("Darkvision:", self.getDarkvision(), "ft")
 
@@ -107,6 +114,12 @@ class Gnome(r.Race):
             print("Height not for a small creature. A gnome is a small creature between 2 ft and 4 ft")
             super().setHeight(36)
 
+    def getNickName(self) -> str:
+        return self.nickName
+
+    def setNickName(self, nickName: str):
+        self.nickName = nickName
+
     def getSubrace(self) -> str:
         if(self.checkSubrace(self.subrace)):
             return self.subrace
@@ -123,9 +136,9 @@ class Gnome(r.Race):
 # Main Class
 #//----------// //----------// //----------//
 g = Gnome()
-g.printGnome(False)
+g.printRace(False)
 g.abilityScoreIncrease()
-g.printGnome(False)
+g.printRace(False)
 
 
 

@@ -4,10 +4,13 @@ import Stats as s
 class Dwarf(r.Race):
     def __init__(self, age: int=50, alignment: str="lawful good",
                  height: int=48, stats: s.Stats=s.Stats(),
-                 subrace: str="hill", weight: int=150):
+                 subrace: str="hill", weight: int=150,
+                 gender: str="male", firstName: str="Adrik",
+                 lastName: str="Balderk"):
         super().__init__("dwarf", age, alignment, height,
                          "common dwarvish", "medium", stats, 25,
-                         subrace, weight)
+                         subrace, weight, gender, firstName,
+                         lastName)
         self.darkvision = 60
 
 #//----------// //----------// //----------//
@@ -36,8 +39,8 @@ class Dwarf(r.Race):
 # These methods will print out all of the
 # variables.
 #//----------// //----------// //----------//
-    def printDwarf(self):
-        super().printRace()
+    def printRace(self, printStats: bool):
+        super().printRace(printStats)
         print("Darkvision:", self.getDarkvision())
 
 #//----------// //----------// //----------//
@@ -120,6 +123,6 @@ class Dwarf(r.Race):
 # Main Class
 #//----------// //----------// //----------//
 d = Dwarf()
-d.printDwarf()
+d.printRace(False)
 d.abilityScoreIncrease()
-d.printDwarf()
+d.printRace(False)

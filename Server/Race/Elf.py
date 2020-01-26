@@ -4,20 +4,31 @@ import Stats as s
 class Elf(r.Race):
     def __init__(self, age: int=100, alignment: str="chaotic good",
                  height: int=60, stats: s.Stats=s.Stats(),
-                 subrace: str="high", weight: int=120):
+                 subrace: str="high", weight: int=120,
+                 gender: str="male", firstName: str="adran",
+                 lastName: str="amakiir (gemflower)"):
         subrace = subrace.lower()
         wisPer = stats.getStat("wisdom: perception")
         wisPer.setHasProficiency(True)
         stats.setStat(wisPer)
         if(subrace == "dark"):
-            super().__init__("elf", age, alignment, height, "common elvish", "medium", stats, 30, subrace, weight)
+            super().__init__("elf", age, alignment, height,
+                             "common elvish", "medium", stats, 30,
+                             subrace, weight, gender, firstName,
+                             lastName)
             self.darkvision = 120
         elif(subrace == "wood"):
-            super().__init__("elf", age, alignment, height, "common elvish", "medium", stats, 35, subrace, weight)
+            super().__init__("elf", age, alignment, height,
+                             "common elvish", "medium", stats, 35,
+                             subrace, weight, gender, firstName,
+                             lastName)
             self.darkvision = 60
         else:
             l = r.chooseLanguage()
-            super().__init__("elf", age, alignment, height, "common elvish" + l, "medium", stats, 30, "high", weight)
+            super().__init__("elf", age, alignment, height,
+                             "common elvish" + l, "medium", stats,
+                             30, "high", weight, gender, firstName,
+                             lastName)
             self.darkvision = 60
 
 #//----------// //----------// //----------//
@@ -51,7 +62,7 @@ class Elf(r.Race):
 # These methods will print out all of the
 # variables.
 #//----------// //----------// //----------//
-    def printElf(self, showStats: bool):
+    def printRace(self, showStats: bool):
         super().printRace(showStats)
         print("Darkvision:", self.getDarkvision())
 
@@ -135,9 +146,9 @@ class Elf(r.Race):
 # Main Class
 #//----------// //----------// //----------//
 e = Elf()
-e.printElf(False)
+e.printRace(False)
 e.abilityScoreIncrease()
-e.printElf(False)
+e.printRace(False)
 
 
 

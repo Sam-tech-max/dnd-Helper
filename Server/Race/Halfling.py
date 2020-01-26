@@ -4,9 +4,14 @@ import Stats as s
 class Halfling(r.Race):
     def __init__(self, age: int=20, alignment: str="lawful good",
                  height: int=36, stats: s.Stats=s.Stats(),
-                 subrace: str="lightfoot", weight: int=40):
+                 subrace: str="lightfoot", weight: int=40,
+                 gender: str="male", firstName: str="alton",
+                 lastName: str="brushgather"):
         subrace = subrace.lower()
-        super().__init__("halfling", age, alignment, height, "common halfling", "small", stats, 25, subrace, weight)
+        super().__init__("halfling", age, alignment, height,
+                         "common halfling", "small", stats, 25,
+                         subrace, weight, gender, firstName,
+                         lastName)
 
 
 #//----------// //----------// //----------//
@@ -35,7 +40,7 @@ class Halfling(r.Race):
 # These methods will print out all of the
 # variables.
 #//----------// //----------// //----------//
-    def printHalfling(self, printStats: bool):
+    def printRace(self, printStats: bool):
         super().printRace(printStats)
 
 #//----------// //----------// //----------//
@@ -112,9 +117,9 @@ class Halfling(r.Race):
 # Main Class
 #//----------// //----------// //----------//
 h = Halfling()
-h.printHalfling(False)
+h.printRace(False)
 h.abilityScoreIncrease()
-h.printHalfling(False)
+h.printRace(False)
 
 
 

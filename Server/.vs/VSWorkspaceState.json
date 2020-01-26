@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Race"
+    "\\Race",
+    "\\Race\\__pycache__"
   ],
-  "SelectedNode": "\\Race\\RaceInheritence.dgml",
+  "SelectedNode": "\\Race\\HalfElf.py",
   "PreviewInSolutionExplorer": false
 }

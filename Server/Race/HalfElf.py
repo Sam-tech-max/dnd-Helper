@@ -4,10 +4,13 @@ import Stats as s
 class HalfElf(r.Race):
     def __init__(self, age: int=20, alignment: str="chaotic good",
                  height: int=60, stats: s.Stats=s.Stats(),
-                 subrace: str="none", weight: int=150):
-        subrace = subrace.lower()
+                 weight: int=150, gender: str="male",
+                 firstName: str="aseir", lastName: str="basha"):
         l = r.chooseLanguage()
-        super().__init__("human", age, alignment, height, "common" + l, "medium", stats, 30, "none", weight)
+        super().__init__("half-elf", age, alignment, height,
+                         "common elvish" + l, "medium", stats, 30,
+                         "none", weight, firstName, lastName)
+        self.darkvision = 60
 
 
 #//----------// //----------// //----------//
@@ -15,36 +18,72 @@ class HalfElf(r.Race):
 #//----------// //----------// //----------//
     def abilityScoreIncrease(self):
         stats = self.getStats()
-        print("Your Dexterity score increases by 1.")
-        dex = stats.getStat("dexterity")
-        dex.setScore(dex.getScore() + 1)
-        stats.setStat(dex)
-
-        print("Your Charisma score increases by 1")
+        print("Your Charisma score increases by 2")
         cha = stats.getStat("charisma")
-        cha.setScore(cha.getScore() + 1)
+        cha.setScore(cha.getScore() + 2)
         stats.setStat(cha)
-
-        print("Your Intelligence score increases by 1.")
-        intell = stats.getStat("intelligence")
-        intell.setScore(intell.getScore() + 1)
-        stats.setStat(intell)
-
-        print("Your Wisdom score increases by 1")
-        wis = stats.getStat("wisdom")
-        wis.setScore(wis.getScore() + 1)
-        stats.setStat(wis)
-
-        print("Your Strength score increases by 1")
-        strength = stats.getStat("strength")
-        strength.setScore(strength.getScore() + 1)
-        stats.setStat(strength)
-
-        print("Your Constitution score increases by 1")
-        con = stats.getStat("constitution")
-        con.setScore(con.getScore() + 1)
-        stats.setStat(con)
-
+        s1 = r.chooseStat()
+        if(s1 == "dexterity"):
+            print("Your Dexterity score increases by 1.")
+            dex = stats.getStat("dexterity")
+            dex.setScore(dex.getScore() + 1)
+            stats.setStat(dex)
+        elif(s1 == "charisma"):
+            print("Your Charisma score increases by 1")
+            cha = stats.getStat("charisma")
+            cha.setScore(cha.getScore() + 1)
+            stats.setStat(cha)
+        elif(s1 == "intelligence"):
+            print("Your Intelligence score increases by 1.")
+            intell = stats.getStat("intelligence")
+            intell.setScore(intell.getScore() + 1)
+            stats.setStat(intell)
+        elif(s1 == "wisdom"):
+            print("Your Wisdom score increases by 1")
+            wis = stats.getStat("wisdom")
+            wis.setScore(wis.getScore() + 1)
+            stats.setStat(wis)
+        elif(s1 == "strength"):
+            print("Your Strength score increases by 1")
+            strength = stats.getStat("strength")
+            strength.setScore(strength.getScore() + 1)
+            stats.setStat(strength)
+        elif(s1 == "constitution"):
+            print("Your Constitution score increases by 1")
+            con = stats.getStat("constitution")
+            con.setScore(con.getScore() + 1)
+            stats.setStat(con)
+        s2 = r.chooseStat()
+        if(s2 == "dexterity"):
+            print("Your Dexterity score increases by 1.")
+            dex = stats.getStat("dexterity")
+            dex.setScore(dex.getScore() + 1)
+            stats.setStat(dex)
+        elif(s2 == "charisma"):
+            print("Your Charisma score increases by 1")
+            cha = stats.getStat("charisma")
+            cha.setScore(cha.getScore() + 1)
+            stats.setStat(cha)
+        elif(s2 == "intelligence"):
+            print("Your Intelligence score increases by 1.")
+            intell = stats.getStat("intelligence")
+            intell.setScore(intell.getScore() + 1)
+            stats.setStat(intell)
+        elif(s2 == "wisdom"):
+            print("Your Wisdom score increases by 1")
+            wis = stats.getStat("wisdom")
+            wis.setScore(wis.getScore() + 1)
+            stats.setStat(wis)
+        elif(s2 == "strength"):
+            print("Your Strength score increases by 1")
+            strength = stats.getStat("strength")
+            strength.setScore(strength.getScore() + 1)
+            stats.setStat(strength)
+        elif(s2 == "constitution"):
+            print("Your Constitution score increases by 1")
+            con = stats.getStat("constitution")
+            con.setScore(con.getScore() + 1)
+            stats.setStat(con)
         super().setStats(stats)
 
 #//----------// //----------// //----------//
@@ -54,6 +93,7 @@ class HalfElf(r.Race):
 #//----------// //----------// //----------//
     def printHalfElf(self, showStats: bool):
         super().printRace(showStats)
+        print("Darkvision:", self.getDarkvision(), "ft")
 
 #//----------// //----------// //----------//
 # Check methods:
@@ -61,15 +101,15 @@ class HalfElf(r.Race):
 #//----------// //----------// //----------//
     def checkAge(self, age: int) -> int:
         if(age < 0):
-            print("You are too young. Setting age to 16.")
-            return 16
-        elif(age > 100):
-            print("You are too old. Setting age to 100.")
-            return 100
+            print("You are too young. Setting age to 20.")
+            return 20
+        elif(age > 180):
+            print("You are too old. Setting age to 180.")
+            return 180
         else:
             return age
 
-    # checks that the human is at least medium hight
+    # checks that the half-elf is at least medium hight
     # which is 48 in to 96 ft
     def checkHeight(self, height: int) -> bool:
         if(height >= 48 and height <= 96):
@@ -79,11 +119,7 @@ class HalfElf(r.Race):
 
     def checkSubrace(self, subrace: str) -> bool:
         subrace = subrace
-        if(subrace == "calishite" or subrace == "chondathan" or
-           subrace == "damaran" or subrace == "issuskan" or
-           subrace == "mulan" or subrace == "rashemi" or
-           subrace == "shou" or subrace == "tethyrian" or
-           subrace == "turami"):
+        if(subrace == "none"):
             return True
         else:
             return False
@@ -104,6 +140,12 @@ class HalfElf(r.Race):
         age = self.checkAge(age)
         self.age = age
 
+    def getDarkvision(self) -> int:
+        return self.darkvision
+
+    def setDarkvision(self, darkvision: int):
+        self.darkvision = darkvision
+
     def getHeight(self) -> int:
         if(not self.checkHeight(self.height)):
             self.setHeight(60)
@@ -113,19 +155,19 @@ class HalfElf(r.Race):
         if(self.checkHeight(height)):
             super().setHeight(height)
         else:
-            print("Height not a medium creature. A human is a medium creature between 5 ft and 6 ft, but medium creatures are between 4 ft and 8 ft")
+            print("Height not a medium creature. A half-elf is a medium creature between 5 ft and 6 ft, but medium creatures are between 4 ft and 8 ft")
             super().setHeight(60)
 
     def getSubrace(self) -> str:
         if(self.checkSubrace(self.subrace)):
             return self.subrace
         else:
-            self.setSubrace("calishite")
+            self.setSubrace("none")
             return self.subrace
 
     def setSubrace(self, subrace: str):
         if(not self.checkSubrace(subrace)):
-            subrace = "calishite"
+            subrace = "none"
         self.subrace = subrace
 
 #//----------// //----------// //----------//

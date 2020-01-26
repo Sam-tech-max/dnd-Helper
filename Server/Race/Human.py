@@ -4,10 +4,14 @@ import Stats as s
 class Human(r.Race):
     def __init__(self, age: int=16, alignment: str="true neutral",
                  height: int=60, stats: s.Stats=s.Stats(),
-                 subrace: str="calishite", weight: int=150):
+                 subrace: str="calishite", weight: int=150,
+                 gender: str="male", firstName: str="aseir",
+                 lastName: str="basha"):
         subrace = subrace.lower()
         l = r.chooseLanguage()
-        super().__init__("human", age, alignment, height, "common" + l, "medium", stats, 30, subrace, weight)
+        super().__init__("human", age, alignment, height,
+                         "common" + l, "medium", stats, 30, subrace,
+                         weight, gender, firstName, lastName)
 
 
 #//----------// //----------// //----------//
@@ -52,7 +56,7 @@ class Human(r.Race):
 # These methods will print out all of the
 # variables.
 #//----------// //----------// //----------//
-    def printHuman(self, showStats: bool):
+    def printRace(self, showStats: bool):
         super().printRace(showStats)
 
 #//----------// //----------// //----------//
@@ -132,9 +136,9 @@ class Human(r.Race):
 # Main Class
 #//----------// //----------// //----------//
 h = Human()
-h.printHuman(False)
+h.printRace(False)
 h.abilityScoreIncrease()
-h.printHuman(False)
+h.printRace(False)
 
 
 

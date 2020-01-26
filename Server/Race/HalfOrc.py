@@ -1,17 +1,19 @@
 import Race as r
 import Stats as s
 
-class Dragonborn(r.Race):
-    def __init__(self, age: int=15, alignment: str="lawful good",
-                height: int=72, stats: s.Stats=s.Stats(),
-                subrace: str="black", weight: int=250,
-                gender: str="male", firstName: str="arjhan",
-                lastName: str="clethtinthiallor"):
-        subrace = subrace.lower()
-        super().__init__("dragonborn", age, alignment, height,
-                         "common draconic", "medium", stats, 30,
-                         subrace, weight, gender, firstName,
-                         lastName)
+class HalfOrc(r.Race):
+    def __init__(self, age: int=14, alignment: str="chaotic evil",
+                 height: int=60, stats: s.Stats=s.Stats(),
+                 weight: int=200, gender: str="male",
+                 firstName: str="dench", lastName: str="basha"):
+        intimidation = stats.getStat("charisma: intimidation")
+        intimidation.setHasProficiency(True)
+        stats.setStat(intimidation)
+        super().__init__("half-orc", age, alignment, height,
+                         "common orc", "medium", stats, 30, "none",
+                         weight, gender, firstName, lastName)
+        self.darkvision = 60
+
 
 
 #//----------// //----------// //----------//
@@ -19,16 +21,16 @@ class Dragonborn(r.Race):
 #//----------// //----------// //----------//
     def abilityScoreIncrease(self):
         stats = self.getStats()
-       
-        print("Your Charisma score increases by 1")
-        cha = stats.getStat("charisma")
-        cha.setScore(cha.getScore() + 1)
-        stats.setStat(cha)
 
         print("Your Strength score increases by 2")
         strength = stats.getStat("strength")
         strength.setScore(strength.getScore() + 2)
         stats.setStat(strength)
+
+        print("Your Constitution score increases by 1")
+        con = stats.getStat("constitution")
+        con.setScore(con.getScore() + 1)
+        stats.setStat(con)
 
         super().setStats(stats)
 
@@ -37,8 +39,9 @@ class Dragonborn(r.Race):
 # These methods will print out all of the
 # variables.
 #//----------// //----------// //----------//
-    def printRace(self, showStats: bool):
+    def printHalfOrc(self, showStats: bool):
         super().printRace(showStats)
+        print("Darkvision:", self.getDarkvision(), "ft")
 
 #//----------// //----------// //----------//
 # Check methods:
@@ -46,15 +49,15 @@ class Dragonborn(r.Race):
 #//----------// //----------// //----------//
     def checkAge(self, age: int) -> int:
         if(age < 0):
-            print("You are too young. Setting age to 16.")
-            return 15
-        elif(age > 80):
-            print("You are too old. Setting age to 80.")
-            return 80
+            print("You are too young. Setting age to 14.")
+            return 14
+        elif(age > 75):
+            print("You are too old. Setting age to 75.")
+            return 75
         else:
             return age
 
-    # checks that the human is at least medium hight
+    # checks that the orc is at least medium hight
     # which is 48 in to 96 ft
     def checkHeight(self, height: int) -> bool:
         if(height >= 48 and height <= 96):
@@ -63,12 +66,8 @@ class Dragonborn(r.Race):
             return False
 
     def checkSubrace(self, subrace: str) -> bool:
-        subrace = subrace.lower()
-        if(subrace == "black" or subrace == "blue" or
-           subrace == "brass" or subrace == "branze" or
-           subrace == "copper" or subrace == "gold" or
-           subrace == "green" or subrace == "red" or
-           subrace == "silver" or subrace == "white"):
+        subrace = subrace
+        if(subrace == "none"):
             return True
         else:
             return False
@@ -89,6 +88,12 @@ class Dragonborn(r.Race):
         age = self.checkAge(age)
         self.age = age
 
+    def getDarkvision(self) -> int:
+        return self.darkvision
+
+    def setDarkvision(self, darkvision:int):
+        self.darkvision = darkvision
+
     def getHeight(self) -> int:
         if(not self.checkHeight(self.height)):
             self.setHeight(60)
@@ -98,28 +103,31 @@ class Dragonborn(r.Race):
         if(self.checkHeight(height)):
             super().setHeight(height)
         else:
-            print("Height not a medium creature. A Dragonborn is a medium creature between 5 ft and 6 ft, but medium creatures are between 4 ft and 8 ft")
+            print("Height not a medium creature. A half-orc is a medium creature between 5 ft and 6 ft, but medium creatures are between 4 ft and 8 ft")
             super().setHeight(60)
 
     def getSubrace(self) -> str:
         if(self.checkSubrace(self.subrace)):
             return self.subrace
         else:
-            self.setSubrace("black")
+            self.setSubrace("none")
             return self.subrace
 
     def setSubrace(self, subrace: str):
         if(not self.checkSubrace(subrace)):
-            subrace = "black"
+            subrace = "none"
         self.subrace = subrace
 
 #//----------// //----------// //----------//
 # Main Class
 #//----------// //----------// //----------//
-d = Dragonborn()
-d.printRace(False)
-d.abilityScoreIncrease()
-d.printRace(False)
+h = HalfOrc()
+h.printHalfOrc(False)
+h.abilityScoreIncrease()
+h.printHalfOrc(False)
+
+
+
 
 
 
