@@ -1,4 +1,4 @@
-import Tool
+import Equipment.Tool as Tool
 
 class Armor(Tool.Tool):
 	def __init__(self, name="Padded", armorType="Light Armor",

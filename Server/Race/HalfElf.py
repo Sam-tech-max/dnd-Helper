@@ -1,5 +1,6 @@
 import Race as r
 import Stats as s
+from typing import List
 
 class HalfElf(r.Race):
     def __init__(self, age: int=20, alignment: str="chaotic good",
@@ -11,7 +12,7 @@ class HalfElf(r.Race):
                          "common elvish" + l, "medium", stats, 30,
                          "none", weight, firstName, lastName)
         self.darkvision = 60
-
+        self.featuresAndTraits = ["fey ancestry: You have advantage on saving throws against being charmed and magic can't put you to sleep."]
 
 #//----------// //----------// //----------//
 # Other methods associatied with the Human race
@@ -91,9 +92,16 @@ class HalfElf(r.Race):
 # These methods will print out all of the
 # variables.
 #//----------// //----------// //----------//
-    def printHalfElf(self, showStats: bool):
+    def printRace(self, showStats: bool):
         super().printRace(showStats)
         print("Darkvision:", self.getDarkvision(), "ft")
+        self.printFeaturesAndTraits()
+
+    def printFeaturesAndTraits(self):
+        print("//----------// features and traits //----------//")
+        for fat in self.getFeaturesAndTraits():
+            print(fat)
+        print("//----------// //----------// //----------//")
 
 #//----------// //----------// //----------//
 # Check methods:
@@ -146,6 +154,12 @@ class HalfElf(r.Race):
     def setDarkvision(self, darkvision: int):
         self.darkvision = darkvision
 
+    def getFeaturesAndTraits(self) -> List[str]:
+        return self.featuresAndTraits
+
+    def setFeaturesAndTraits(self, featuresAndTraits: List[str]):
+        self.featuresAndTraits = featuresAndTraits
+
     def getHeight(self) -> int:
         if(not self.checkHeight(self.height)):
             self.setHeight(60)
@@ -175,9 +189,9 @@ class HalfElf(r.Race):
 #//----------// //----------// //----------//
 h = HalfElf()
 
-h.printHalfElf(False)
+h.printRace(False)
 h.abilityScoreIncrease()
-h.printHalfElf(False)
+h.printRace(False)
 
 
 

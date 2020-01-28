@@ -19,6 +19,7 @@ class Spell:
 			self.components = components
 			self.damageEffect = damageEffect
 			self.description = description
+
 			
 	def printSpell(self):
 		print("//----------// " + self.getName() + " //----------//" )

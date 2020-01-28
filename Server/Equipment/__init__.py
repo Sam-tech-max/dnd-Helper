@@ -1,4 +1,4 @@
-import Item from Item
-import Tool from Tool
-import Weapon from Weapon
-import Armor from Armor
+import Equipment.Item
+import Equipment.Armor
+import Equipment.Tool
+import Equipment.Weapon

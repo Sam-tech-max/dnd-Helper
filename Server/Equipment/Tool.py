@@ -1,4 +1,4 @@
-import Item
+import Equipment.Item as Item
 
 class Tool(Item.Item):
 	def __init__(self, name="Aichemist'supplies",

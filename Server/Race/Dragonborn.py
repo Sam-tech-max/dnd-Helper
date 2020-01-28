@@ -1,5 +1,6 @@
 import Race as r
 import Stats as s
+import Equipment.Weapon as Weapon
 
 class Dragonborn(r.Race):
     def __init__(self, age: int=15, alignment: str="lawful good",
@@ -8,11 +9,24 @@ class Dragonborn(r.Race):
                 gender: str="male", firstName: str="arjhan",
                 lastName: str="clethtinthiallor"):
         subrace = subrace.lower()
+        if(subrace == "black" or subrace == "copper"):
+            self.breathWeapon = Weapon.Weapon("breath weapon", "race", 0, "gp", "2d6", "acid", "0 lb", " You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level")
+        elif(subrace == "blue" or subrace == "bronze"):
+            self.breathWeapon = Weapon.Weapon("breath weapon", "race", 0, "gp", "2d6", "lightning", "0 lb", " You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level")
+        elif(subrace == "brass" or subrace == "gold" or subrace == "red"):
+            self.breathWeapon = Weapon.Weapon("breath weapon", "race", 0, "gp", "2d6", "fire", "0 lb", " You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level")
+        elif(subrace == "green"):
+            self.breathWeapon = Weapon.Weapon("breath weapon", "race", 0, "gp", "2d6", "poison", "0 lb", " You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level")
+        elif(subrace == "silver" or subrace == "white"):
+            self.breathWeapon = Weapon.Weapon("breath weapon", "race", 0, "gp", "2d6", "cold", "0 lb", " You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level")
+        else:
+            self.breathWeapon = Weapon.Weapon("breath weapon", "race", 0, "gp", "2d6", "acid", "0 lb", " You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level")
+            subrace = "black"
+            print("That is not a subrace of Dragonborn")
         super().__init__("dragonborn", age, alignment, height,
                          "common draconic", "medium", stats, 30,
                          subrace, weight, gender, firstName,
                          lastName)
-
 
 #//----------// //----------// //----------//
 # Other methods associatied with the Human race
@@ -39,6 +53,8 @@ class Dragonborn(r.Race):
 #//----------// //----------// //----------//
     def printRace(self, showStats: bool):
         super().printRace(showStats)
+        self.getBreathWeapon().printWeapon()
+        
 
 #//----------// //----------// //----------//
 # Check methods:
@@ -88,6 +104,12 @@ class Dragonborn(r.Race):
     def setAge(self, age: int):
         age = self.checkAge(age)
         self.age = age
+
+    def getBreathWeapon(self) -> Weapon.Weapon:
+        return self.breathWeapon
+
+    def setBreathWeapon(self, breathWeapon: Weapon.Weapon):
+        self.breathWeapon = breathWeapon
 
     def getHeight(self) -> int:
         if(not self.checkHeight(self.height)):

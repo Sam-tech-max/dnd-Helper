@@ -1,5 +1,6 @@
 import Race as r
 import Stats as s
+from typing import List
 
 class HalfOrc(r.Race):
     def __init__(self, age: int=14, alignment: str="chaotic evil",
@@ -13,7 +14,8 @@ class HalfOrc(r.Race):
                          "common orc", "medium", stats, 30, "none",
                          weight, gender, firstName, lastName)
         self.darkvision = 60
-
+        self.featuresAndTraits = ["relentless endurance: When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest",
+                                  "savage attacks: When you score a critical hit with a melee weapon attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit"]
 
 
 #//----------// //----------// //----------//
@@ -39,9 +41,17 @@ class HalfOrc(r.Race):
 # These methods will print out all of the
 # variables.
 #//----------// //----------// //----------//
-    def printHalfOrc(self, showStats: bool):
+    def printRace(self, showStats: bool):
         super().printRace(showStats)
         print("Darkvision:", self.getDarkvision(), "ft")
+        self.printFeaturesAndTraits()
+
+    def printFeaturesAndTraits(self):
+        print("//----------// Features and Traits //----------//")
+        for each in self.getFeaturesAndTraits():
+            print(each)
+        print("//----------// //----------// //----------//")
+
 
 #//----------// //----------// //----------//
 # Check methods:
@@ -106,6 +116,12 @@ class HalfOrc(r.Race):
             print("Height not a medium creature. A half-orc is a medium creature between 5 ft and 6 ft, but medium creatures are between 4 ft and 8 ft")
             super().setHeight(60)
 
+    def getFeaturesAndTraits(self) -> List[str]:
+        return self.featuresAndTraits
+
+    def setFeaturesAndTraits(self, featuresAndTraits: List[str]):
+        self.featuresAndTraits = featuresAndTraits
+
     def getSubrace(self) -> str:
         if(self.checkSubrace(self.subrace)):
             return self.subrace
@@ -122,9 +138,9 @@ class HalfOrc(r.Race):
 # Main Class
 #//----------// //----------// //----------//
 h = HalfOrc()
-h.printHalfOrc(False)
+h.printRace(False)
 h.abilityScoreIncrease()
-h.printHalfOrc(False)
+h.printRace(False)
 
 
 

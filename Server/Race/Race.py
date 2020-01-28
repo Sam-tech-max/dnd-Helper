@@ -37,6 +37,7 @@ class Race(object):
         self.alignment = alignment.lower()
         self.firstName = firstName.lower()
         self.gender = gender.lower()
+        self.hasSpellBook = False
         self.height = height
         self.languages = languages.lower()
         self.lastName = lastName.lower()

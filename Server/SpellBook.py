@@ -1,14 +1,21 @@
+from typing import List
 import Spell
+Vector = List[Spell.Spell]
+
 
 class SpellBook:
-	def __init__(self, spellsKnown=0, spellSlot0=0, spellSlot1=1, spellSlot2=2,
-	spellSlot3=3, spellSlot4=4, spellSlot5=5, spellSlot6=6, spellSlot7=7,
-	spellSlot8=8, spellSlot9=9):
-		list = []
-		while(spellsKnown > 0):
-			list.append(Spell.Spell())
+	def __init__(self, spellsKnown: int=0, spellSlot0: int=0,
+			  spellSlot1: int=1, spellSlot2: int=2,
+			  spellSlot3: int=3, spellSlot4: int=4,
+			  spellSlot5: int=5, spellSlot6: int=6,
+			  spellSlot7: int=7, spellSlot8: int=8,
+			  spellSlot9: int=9, spellList: Vector=[Spell.Spell()]):
+		
+		initSpells = len(spellList)
+		while(spellsKnown > initSpells):
+			spellList.append(Spell.Spell())
 			spellsKnown = spellsKnown - 1
-		self.spells = list
+		self.spells = spellList
 		list = []
 		list.append(spellSlot0)
 		list.append(spellSlot1)
@@ -31,4 +38,29 @@ class SpellBook:
 			index = index + 1
 # //---------// //---------// //---------//
 # get and set functions
+# //---------// //---------// //---------//
+	def getSpellByName(self, name: str) -> Spell.Spell:
+		s = "empty"
+		for spell in self.getSpells():
+			if(spell.getName() == name):
+				return spell
+
+	def addSpell(self, spell: Spell.Spell):
+		self.getSpells().append(spell)
+
+	def getSpells(self) -> Vector:
+		return self.spells
+
+	def setSpellSlot(self, spellSlot:int, spellSlotsAvailable: int):
+		if(spellSlotsAvailable >= 0):
+			if(spellSlot >= 0 and spellSlot <= 9):
+				self.spellSlot[spellSlot] = spellSlotsAvailable
+			else:
+				print("spell slot needs to be between 0 and 9.")
+		else:
+			print("spell slots availabe needs to be greater than or equal to 0.")
+
+
+# //---------// //---------// //---------//
+# main functions
 # //---------// //---------// //---------//
