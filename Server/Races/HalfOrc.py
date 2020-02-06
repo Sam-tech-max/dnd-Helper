@@ -1,4 +1,4 @@
-import Race as r
+import Races.Race as r
 import Stats as s
 from typing import List
 
@@ -137,10 +137,6 @@ class HalfOrc(r.Race):
 #//----------// //----------// //----------//
 # Main Class
 #//----------// //----------// //----------//
-h = HalfOrc()
-h.printRace(False)
-h.abilityScoreIncrease()
-h.printRace(False)
 
 
 

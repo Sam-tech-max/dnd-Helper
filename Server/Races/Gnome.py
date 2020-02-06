@@ -1,4 +1,4 @@
-import Race as r
+import Races.Race as r
 import Stats as s
 import SpellBook
 import Spell
@@ -177,10 +177,6 @@ class Gnome(r.Race):
 #//----------// //----------// //----------//
 # Main Class
 #//----------// //----------// //----------//
-g = Gnome()
-g.printRace(False)
-g.abilityScoreIncrease()
-g.printRace(False)
 
 
 

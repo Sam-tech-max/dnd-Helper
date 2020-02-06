@@ -1,4 +1,4 @@
-import Stats as s
+import Races.Stats as s
 
 def chooseLanguage(l: str = "empty")->str:
     l = l.lower()
@@ -27,7 +27,7 @@ def chooseStat(s: str = "empty")->str:
         return chooseStat(s)
 
 class Race(object):
-    def __init__(self, race="", age: int=0,
+    def __init__(self, race: str="", age: int=0,
                  alignment: str="true neutral", height: int=0,
                  languages:str="empty", size: str="tiny",
                  stats: s.Stats=s.Stats(), speed: int=30,

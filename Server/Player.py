@@ -1,5 +1,6 @@
 import json
 import Stats
+import Races.Race as r
 # This class is to keep track of your dnd chacter.
 # It is based off of the 5e dnd Character Sheet
 
@@ -10,14 +11,23 @@ class Player:
 # then the values below will be what the character will be.
 # //---------// //---------// //---------//
 
-	def __init__(self, characterName="John Doe", classRole="fighter",
-	level=1, background="Hermit", playerName="Odin", race="Elf",
-	subrace="Wood",	alignment="true neutral", experiencePoints=0,
-	proficiencyBonus=0,	inspiration=0, armorClass=0, initiative=0,
-	speed=0, hitPoints=0, hitDie="1d6", age=20, height=68, weight=150,
-	darkvision=0, size="medium", gender="male", strength=15,
-	dexterity=14, constitution=13, intelligence=12, wisdom=10,
-	charisma=8):
+	def __init__(self, age: int = 20, armorClass: int = 0,
+			  alignment: str = "true neutral",
+			  background: str = "Hermit", charisma: int = 8,
+			  classRole: str = "fighter", constitution: int = 13,
+			  darkvision: int = 0, dexterity: int = 14,
+			  experiencePoints: int = 0, firstName: str = "John",
+			  gender: str = "male", height: int = 68,
+			  hitDie: str = "1d6", hitPoints: int = 0,
+			  initiative: int = 0, inspiration: int = 0,
+			  intelligence: int = 12, lastName: str = "Doe",
+			  level: int = 1, playerName: str = "Odin",
+			  proficiencyBonus: int = 0, race: str = "Elf",
+			  size: str = "medium", speed: int = 0,
+			  strength: int = 15, subrace: str = "Wood",
+			  weight: int = 150, wisdom: int = 10):
+
+		race = r.Race(race, age, alignment, height, languages, size, stats, speed, subrace, weight, gender, firstName, lastName)
 		# String Types
 		self.alignment = alignment
 		self.background = background

@@ -1,4 +1,4 @@
-import Race as r
+import Races.Race as r
 import Stats as s
 
 class Human(r.Race):
@@ -135,10 +135,6 @@ class Human(r.Race):
 #//----------// //----------// //----------//
 # Main Class
 #//----------// //----------// //----------//
-h = Human()
-h.printRace(False)
-h.abilityScoreIncrease()
-h.printRace(False)
 
 
 

@@ -1,5 +1,7 @@
-import Race as r
+import Races.Race as r
 import Stats as s
+from typing import List
+
 
 class Halfling(r.Race):
     def __init__(self, age: int=20, alignment: str="lawful good",
@@ -8,6 +10,16 @@ class Halfling(r.Race):
                  gender: str="male", firstName: str="alton",
                  lastName: str="brushgather"):
         subrace = subrace.lower()
+        self.featuresAndTraits = ["lucky: When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll",
+                                  "brave: You have advantage on saving throws against being frightened",
+                                  "halfling nimblesness: you can move through the space of any creature that is of a size larger than yours."]
+        if(subrace == "lightfoot"):
+            self.featuresAndTraits.append("naturally stealthy: You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.")
+        elif(subrace == "stout"):
+            self.featuresAndTraits.append("stout resilience: You have advantage on saving throws against poison, and you have resistance against poison damage.")
+        else:
+            self.featuresAndTraits.append("naturally stealthy: You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.")
+
         super().__init__("halfling", age, alignment, height,
                          "common halfling", "small", stats, 25,
                          subrace, weight, gender, firstName,
@@ -42,6 +54,14 @@ class Halfling(r.Race):
 #//----------// //----------// //----------//
     def printRace(self, printStats: bool):
         super().printRace(printStats)
+        self.printFeaturesAndTraits()
+    
+    def printFeaturesAndTraits(self):
+        print("//----------// features and traits //----------//")
+        for fat in self.getFeaturesAndTraits():
+            print(fat)
+        print("//----------// //----------// //----------//")
+
 
 #//----------// //----------// //----------//
 # Check methods:
@@ -88,6 +108,11 @@ class Halfling(r.Race):
         age = self.checkAge(age)
         self.age = age
 
+    def getFeaturesAndTraits(self) -> List[str]:
+        return self.featuresAndTraits
+
+    def setFeaturesAndTraits(self, featuresAndTraits: List[str]):
+        self.featuresAndTraits = featuresAndTraits
 
     def getHeight(self) -> int:
         if(not self.checkHeight(self.height)):
@@ -116,10 +141,7 @@ class Halfling(r.Race):
 #//----------// //----------// //----------//
 # Main Class
 #//----------// //----------// //----------//
-h = Halfling()
-h.printRace(False)
-h.abilityScoreIncrease()
-h.printRace(False)
+
 
 
 

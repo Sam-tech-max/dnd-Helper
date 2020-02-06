@@ -1,5 +1,15 @@
-import Race as r
+import Races.Race as r
 import Stats as s
+
+def chooseToolProficiency(toolName: str = "empty") -> str:
+    toolName = toolName.lower()
+    if(toolName == "smith's tools" or toolName == "brewer's supplies" or toolName == "mason's tools"):
+        return toolName
+    else:
+        print("Choose from the following tools:")
+        toolname = str(input("smith's tools; brewer's supplies; or mason's tools: "))
+        chooseToolProficiency(toolname)
+
 
 class Dwarf(r.Race):
     def __init__(self, age: int=50, alignment: str="lawful good",
@@ -12,6 +22,14 @@ class Dwarf(r.Race):
                          subrace, weight, gender, firstName,
                          lastName)
         self.darkvision = 60
+        self.featuresAndTraits = ["dwarven resilience: You have advantage on saving throws against poison, and you have resistance against poison damage."]
+        tp = "tool proficiency: " + str(chooseToolProficiency())
+        self.otherProficiencies = ["dwarven combat training: You have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer.",
+                                   tp,
+                                   "stonecunning: Whenever you make an Intelligence (History) check related to the origin of stone work, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."]
+        if(subrace == "mountain"):
+            self.otherProficiencies.append("dwarven armor training: You have proficiency with light and medium armor.")
+
 
 #//----------// //----------// //----------//
 # Other methods associatied with the Dwarf race
@@ -122,7 +140,3 @@ class Dwarf(r.Race):
 #//----------// //----------// //----------//
 # Main Class
 #//----------// //----------// //----------//
-d = Dwarf()
-d.printRace(False)
-d.abilityScoreIncrease()
-d.printRace(False)

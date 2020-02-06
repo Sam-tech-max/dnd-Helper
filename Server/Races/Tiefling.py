@@ -1,4 +1,4 @@
-import Race as r
+import Races.Race as r
 import Stats as s
 import Spell
 import SpellBook
@@ -151,13 +151,7 @@ class Tiefling(r.Race):
 #//----------// //----------// //----------//
 # Main Class
 #//----------// //----------// //----------//
-t = Tiefling()
-t.printRace(False)
-t.abilityScoreIncrease()
-t.printRace(False)
-t.levelUp(3)
-t.levelUp(5)
-t.printRace(False)
+
 
 
 
