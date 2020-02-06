@@ -18,3 +18,9 @@ import Races.Human
 import Races.Race
 import Races.Stats
 import Races.Tiefling
+
+# From the Equipment folder
+import Equipment.Item
+import Equipment.Armor
+import Equipment.Tool
+import Equipment.Weapon
