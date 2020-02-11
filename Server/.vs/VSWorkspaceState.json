@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Race"
+    "\\Backgrounds",
+    "\\Equipment",
+    "\\Races"
   ],
-  "SelectedNode": "\\Player.py",
+  "SelectedNode": "\\Backgrounds\\Background.py",
   "PreviewInSolutionExplorer": false
 }

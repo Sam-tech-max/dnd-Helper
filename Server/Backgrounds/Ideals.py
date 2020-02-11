@@ -11,6 +11,22 @@ def checkIdeal(background: str, num: str = "empty") -> str:
         return getIdealEntertainer(num)
     elif(background == "folk hero"):
         return getIdealFolkHero(num)
+    elif(background == "guild artisan"):
+        return getIdealGuildArtisan(num)
+    elif(background == "hermit"):
+        return getIdealHermit(num)
+    elif(background == "noble"):
+        return getIdealNoble(num)
+    elif(background == "outlander"):
+        return getIdealOutlander(num)
+    elif(background == "sage"):
+        return getIdealSage(num)
+    elif(background == "sailor"):
+        return getIdealSailor(num)
+    elif(background == "soldier"):
+        return getIdealSoldier(num)
+    elif(background == "urchin"):
+        return getIdealUrchin(num)
     else:
         return getIdealAcolyte(num)
 
@@ -96,5 +112,141 @@ def getIdealFolkHero(num:str = "empty") -> str:
         return "Sincerity. There's no good in pretending to be something I'm not. (Neutral)"
     elif(num == "6"):
         return "Destiny. Nothing and no one can steer me away from my higher calling. (Any)"
+    else:
+        return num
+
+
+def getIdealGuildArtisan(num:str = "empty") -> str:
+    if(num == "empty" or num == "1"):
+        return "Community. It is the duty of all civilized people to strengthen the bonds of community and the security of civilization. (Lawful)"
+    elif(num == "2"):
+        return "Generosity. My talents were given to me so that I could use them to benefit the world. (Good)"
+    elif(num == "3"):
+        return "Freedom. Everyone should be free to pursue his or her own livelihood. (Chaotic)"
+    elif(num == "4"):
+        return "Greed. I'm only in it for the money. (Evil)"
+    elif(num == "5"):
+        return "People. I'm committed to the people I care about, not to ideals. (Neutral)"
+    elif(num == "6"):
+        return "Aspiration. I work hard to be the best there is at my craft."
+    else:
+        return num
+
+
+def getIdealHermit(num:str = "empty") -> str:
+    if(num == "empty" or num == "1"):
+        return "Greater Good. My gifts are meant to be shared with all, not used for my own benefit. (Good)"
+    elif(num == "2"):
+        return "Logic. Emotions must not cloud our sense of what is right and true, or our logical thinking. (Lawful)"
+    elif(num == "3"):
+        return "Free Thinking. Inquiry and curiosity are the pillars of progress. (Chaotic)"
+    elif(num == "4"):
+        return "Power. Solitude and contemplation are paths toward mystical or magical power. (Evil)"
+    elif(num == "5"):
+        return "Live and Let Live. Meddling in the affaris of others only causes trouble. (Neutral)"
+    elif(num == "6"):
+        return "Self-Knowledge. If you know yourself, there's nothing left to know. (Any)"
+    else:
+        return num
+
+
+def getIdealNoble(num:str = "empty") -> str:
+    if(num == "empty" or num == "1"):
+        return "Respect. Respect is due to me because of my position, but all people regardless of statiion deserve to be treated with dignity. (Good)"
+    elif(num == "2"):
+        return "Responsibility. It is my buty to respect the authority of those above me, just as those below me must respect mine. (Lawful)"
+    elif(num == "3"):
+        return "Independence. I must prove that I can handle myself without the coddling of my family. (Chaotic)"
+    elif(num == "4"):
+        return "Power. If I can attain more power, no one will tell me what to do. (Evil)"
+    elif(num == "5"):
+        return "Family. Blood runs thicker than water. (Any)"
+    elif(num == "6"):
+        return "Noble Obligation. It is my duty to protect and car for the people beneath me. (Good)"
+    else:
+        return num
+
+
+def getIdealOutlander(num:str = "empty") -> str:
+    if(num == "empty" or num == "1"):
+        return "Change. Life is like the seasons, in constant change, and we must change with it. (Chaotic)"
+    elif(num == "2"):
+        return "Greater Good. It is each person's responsibility to make the most happiness for the whole tribe. (Good)"
+    elif(num == "3"):
+        return "Honor. If I dishonor myself, I dishonor my whole clan. (Lawful)"
+    elif(num == "4"):
+        return "Might. The strongest are meant to rule. (Evil)"
+    elif(num == "5"):
+        return "Nature. The natural world is more important than all the constructs of civilization. (Neutral)"
+    elif(num == "6"):
+        return "Glory. I must earn glory in battle, for myself and my clan. (Any)"
+    else:
+        return num
+
+
+def getIdealSage(num:str = "empty") -> str:
+    if(num == "empty" or num == "1"):
+        return "Knowledge. The path to power and self-improvement is through knowledge. (Neutral)"
+    elif(num == "2"):
+        return "Beauty. What is beautiful points us beyond itself toward what is true. (Good)"
+    elif(num == "3"):
+        return "Logic. Emotions must not cloud our logical thinking. (Lawful)"
+    elif(num == "4"):
+        return "No Limits. Nothing should fetter the infinite possibility inherent in all existence. (Chaotic)"
+    elif(num == "5"):
+        return "Power. Knowledge is the path to power and domination. (Evil)"
+    elif(num == "6"):
+        return "Self-Improvement. The goal of a life of study is the betterment of oneself. (Any)"
+    else:
+        return num
+
+
+def getIdealSailor(num:str = "empty") -> str:
+    if(num == "empty" or num == "1"):
+        return "Respect. The thing that keeps a ship together is mutual respect between captin and crew. (Good)"
+    elif(num == "2"):
+        return "Rairness. We all do the work, so we all share in the rewards. (Lawful)"
+    elif(num == "3"):
+        return "Freedom. The sea is freedom - the freedom to go anywhere and do anything. (Chaotic)"
+    elif(num == "4"):
+        return "Mastery. I'm a predator, and the other ships on the sea are my prey. (Evil)"
+    elif(num == "5"):
+        return "People. I'm committed to my crewmates, not to ideals. (Neutral)"
+    elif(num == "6"):
+        return "Aspiration. Someday I'll own my own ship and chart my own destiny. (Any)"
+    else:
+        return num
+
+
+def getIdealSoldier(num:str = "empty") -> str:
+    if(num == "empty" or num == "1"):
+        return "Greater Good. Our lot is to lay down our lives in defense of others. (Good)"
+    elif(num == "2"):
+        return "Responsibility. I do what I must and obey just authority. (Lawful)"
+    elif(num == "3"):
+        return "Independence. When people follow orders blindly, they embrace a kind of tyranny. (Chaotic)"
+    elif(num == "4"):
+        return "Might. In life as in war, the stronger force wins. (Evil)"
+    elif(num == "5"):
+        return "Live and Let Live. Ideals aren't worth killing over or going to war for. (Neutral)"
+    elif(num == "6"):
+        return "Nation. My city, nation, or people are all that matter. (Any)"
+    else:
+        return num
+
+
+def getIdealUrchin(num:str = "empty") -> str:
+    if(num == "empty" or num == "1"):
+        return "Respect. All people, rich or poor, deserve respect. (Good)"
+    elif(num == "2"):
+        return "Community. We have to take care of each other, beacuse no one else is going to do it. (Lawful)"
+    elif(num == "3"):
+        return "Change. The low are lifted up, and the high and mighty are brought down. Change is the nature of things. (Chaotic)"
+    elif(num == "4"):
+        return "Retribution. The rich need to be shown what life and death are like in the gutters. (Evil)"
+    elif(num == "5"):
+        return "People. I help the people who help me - that's what keeps us alive. (Neutral)"
+    elif(num == "6"):
+        return "Aspiration. I'm going to prove that I'm worthy of a better life."
     else:
         return num

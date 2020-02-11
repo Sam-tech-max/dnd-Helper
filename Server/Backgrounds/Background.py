@@ -70,22 +70,7 @@ class Background(object):
 # //----------// //----------// //----------//
 bg = Background()
 bg.printBackground(True, True)
-bg = Background("folk hero", [], "1", "1", "1", [], "1")
-bg.printBackground(True, True)
-bg = Background("folk hero", [], "2", "2", "2", [], "2")
-bg.printBackground(True, True)
-bg = Background("folk hero", [], "3", "3", "3", [], "3")
-bg.printBackground(True, True)
-bg = Background("folk hero", [], "4", "4", "4", [], "4")
-bg.printBackground(True, True)
-bg = Background("folk hero", [], "5", "5", "5", [], "5")
-bg.printBackground(True, True)
-bg = Background("folk hero", [], "6", "6", "6", [], "6")
-bg.printBackground(True, True)
-bg = Background("folk hero", [], "7", "7", "7", [], "7")
-bg.printBackground(True, True)
-bg = Background("folk hero", [], "8", "8", "8", [], "8")
-bg.printBackground(True, True)
+bg = Background("urchin", [], "1", "1", "1", [], "1")
 
 
 
