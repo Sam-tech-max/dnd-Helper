@@ -1,5 +1,6 @@
 import Equipment.Item as I
 import Backgrounds.Bonds as BO
+import Backgrounds.Backpack as BP
 import Backgrounds.Flaws as FL
 import Backgrounds.Ideals as ID
 import Backgrounds.PersonalityTraits as PT
@@ -28,6 +29,8 @@ class Background(object):
                  skillProficiencies: str = []
                  ):
         self.backgroundName = checkBackgroundName(backgroundName)
+        if(len(backpack) == 0):
+            self.backpack = BP.getBackpack(self.backgroundName)
         self.bond = BO.checkBond(self.backgroundName, bond)
         self.flaw = FL.checkFlaw(self.backgroundName, flaw)
         self.ideal = ID.checkIdeal(self.backgroundName, ideal)
@@ -51,6 +54,7 @@ class Background(object):
             self.printSkillProficiencies()
         if(printLanguages):
             self.printLanguages()
+        self.printBackpack()
 
     def printSkillProficiencies(self):
         sp = ""
@@ -64,13 +68,16 @@ class Background(object):
             l += ":" + lang + ":"
         print("Language(s): ", l)
 
+    def printBackpack(self):
+        print("//----------// Backpack //----------//")
+        for item in self.backpack:
+            item.printItem()
+
 
 # //----------// //----------// //----------//
 # Main Function Statements
 # //----------// //----------// //----------//
-bg = Background()
-bg.printBackground(True, True)
-bg = Background("urchin", [], "1", "1", "1", [], "1")
-
+bg = Background("criminal", [], "1", "1", "1", [], "1")
+bg.printBackground()
 
 

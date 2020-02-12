@@ -1,15 +1,23 @@
 import Equipment.Tool as Tool
 
 class Armor(Tool.Tool):
-	def __init__(self, name="Padded", armorType="Light Armor",
-	cost=5, costType="gp", armorClass="11 + Dex modifier",
-	strength="null", disadvantageOnStealth=True, weight="2 lb"):
-		super().__init__(name, armorType, cost, costType, weight)
+	def __init__(self,
+			  name: str = "Padded",
+			  armorType: str = "Light Armor",
+			  cost: int = 5,
+			  costType: str = "gp",
+			  armorClass: str = "11 + Dex modifier",
+			  strength: str = "null",
+			  disadvantageOnStealth: bool = True,
+			  weight: int = 2,
+			  amount: int = 0):
+		super().__init__(name, armorType, cost, costType, weight,
+				   amount)
 		self.armorClass = armorClass
 		self.strength = strength
 		self.disadvantageOnStealth = disadvantageOnStealth
 				
-	def printArmor(self):
+	def printItem(self):
 		super().printTool()
 		print("Armor Class:", self.getArmorClass())
 		print("Strength:", self.getStrength())

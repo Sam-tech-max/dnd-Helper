@@ -3,13 +3,13 @@ import Equipment.Tool as Tool
 class Weapon(Tool.Tool):
 	def __init__(self, name: str ="Club", weaponType: str = "Simple Melee Weapon",
 	cost: int = 1, costType: str = "sp", damage: str = "1d4", damageType: str = "bludgeoning",
-	weight: str = "2 lb", properties: str = "Light"):
-		super().__init__(name, weaponType, cost, costType, weight)
+	weight: int = 2, properties: str = "Light", amount: int = 1):
+		super().__init__(name, weaponType, cost, costType, weight, amount)
 		self.damage = damage
 		self.damageType = damageType
 		self.properties =properties
 		
-	def printWeapon(self):
+	def printItem(self):
 		super().printTool()
 		print("Damage:", self.getDamage(), self.getDamageType())
 		print("Properties:", self.getProperties())

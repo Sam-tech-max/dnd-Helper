@@ -13,6 +13,8 @@ def checkBond(background: str, num: str = "empty") -> str:
         return getBondFolkHero(num)
     elif(background == "guild artisan"):
         return getBondGuildArtisan(num)
+    elif(background == "hermit"):
+        return getBondHermit(num)
     elif(background == "noble"):
         return getBondNoble(num)
     elif(background == "outlander"):

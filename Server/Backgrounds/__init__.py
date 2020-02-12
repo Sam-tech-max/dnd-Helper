@@ -1,6 +1,6 @@
 import Backgrounds.Background
+import Backgrounds.Backpack
 import Backgrounds.Bonds
-import Backgrounds.Equipment
 import Backgrounds.Flaws
 import Backgrounds.Ideals
 import Backgrounds.PersonalityTraits
