@@ -5,6 +5,20 @@ import Server.Spell
 import Server.SpellBook
 import Equipment.Tool
 import Equipment.Weapon
+# From the backgrounds folder
+import Backgrounds.Background
+import Backgrounds.Backpack
+import Backgrounds.Bonds
+import Backgrounds.Flaws
+import Backgrounds.Ideals
+import Backgrounds.PersonalityTraits
+import Backgrounds.SkillPro
+
+# From the Equipment folder
+import Equipment.Armor
+import Equipment.Item
+import Equipment.Tool
+import Equipment.Weapon
 
 # From the races folder
 import Races.Dragonborn
@@ -19,8 +33,6 @@ import Races.Race
 import Races.Stats
 import Races.Tiefling
 
-# From the Equipment folder
-import Equipment.Item
-import Equipment.Armor
-import Equipment.Tool
-import Equipment.Weapon
+# from the Utility folder
+import Utility.Features
+import Utility.Languages

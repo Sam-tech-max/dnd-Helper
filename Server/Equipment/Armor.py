@@ -18,7 +18,7 @@ class Armor(Tool.Tool):
 		self.disadvantageOnStealth = disadvantageOnStealth
 				
 	def printItem(self):
-		super().printTool()
+		super().printItem()
 		print("Armor Class:", self.getArmorClass())
 		print("Strength:", self.getStrength())
 		if(self.getDisadvantageOnStealth()):

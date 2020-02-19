@@ -10,7 +10,7 @@ class Weapon(Tool.Tool):
 		self.properties =properties
 		
 	def printItem(self):
-		super().printTool()
+		super().printItem()
 		print("Damage:", self.getDamage(), self.getDamageType())
 		print("Properties:", self.getProperties())
 		

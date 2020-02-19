@@ -4,6 +4,7 @@ import Backgrounds.Bonds
 import Backgrounds.Flaws
 import Backgrounds.Ideals
 import Backgrounds.PersonalityTraits
+import Backgrounds.SkillPro
 
 
 

@@ -1,6 +1,6 @@
 class Stat:
-	def __init__(self, name="strength",  score=10, hasProficiency=False,
-	mod=0):
+	def __init__(self, name: str = "strength",  score: int = 10,
+			  hasProficiency: bool = False, mod: int = 0):
 		self.name = name
 		self.hasProficiency = hasProficiency
 		self.score = score
@@ -19,34 +19,36 @@ class Stat:
 # stat class
 # //---------// //---------// //---------//
 		
-	def getHasProficiency(self):
+	def getHasProficiency(self) -> int:
 		return self.hasProficiency
 		
-	def setHasProficiency(self, hasProficiency):
+	def setHasProficiency(self, hasProficiency: bool):
 		self.hasProficiency = hasProficiency
 		
-	def getMod(self):
+	def getMod(self) -> int:
 		return self.mod
 		
-	def setMod(self, mod):
+	def setMod(self, mod: int):
 		self.mod = mod
 		
-	def getName(self):
+	def getName(self) -> str:
 		return self.name
 		
-	def setName(self, name):
+	def setName(self, name: str):
 		self.name = name
 		
-	def getScore(self):
+	def getScore(self) -> int:
 		return self.score
 		
-	def setScore(self, score):
+	def setScore(self, score: int):
 		self.score = score
 
 
 class Stats:
-	def __init__(self, proficienyBonus=0, strength=15, dexterity=14,
-	constitution=13, intelligence=12, wisdom=10, charisma=8):
+	def __init__(self, proficienyBonus: int = 0, strength: int = 15,
+			  dexterity: int = 14, constitution: int = 13,
+			  intelligence: int = 12, wisdom: int = 10,
+			  charisma: int = 8):
 		self.stats = list()
 		# Strength
 		self.stats.append(Stat("strength", strength))
@@ -90,14 +92,14 @@ class Stats:
 # //---------// //---------// //---------//
 # These are the get and set methods
 # //---------// //---------// //---------//
-	def getStat(self, name):
+	def getStat(self, name: str) -> Stat:
 		for stat in self.stats:
 			if(stat.getName() == name):
 				return stat
 		self.calculateMods()
 		return Stat()
 		
-	def setStat(self, stat):
+	def setStat(self, stat: Stat):
 		name = stat.getName()
 		for each in self.stats:
 			if(name == each.getName()):
@@ -118,7 +120,7 @@ class Stats:
 		for stat in self.stats:
 			stat.printStat()
 			
-	def calculateMod(self, score):
+	def calculateMod(self, score: int) -> int:
 		if(score == 1):
 			return -5
 		elif(score == 2 or score == 3):
