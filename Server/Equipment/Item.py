@@ -1,7 +1,7 @@
 class Item:
 	def __init__(self, name: str = "meat, chunk",
 			  itemType: str = "generic", cost: int = 3,
-			  costType: str = "sp", amount: int = 1):
+			  costType: str = "gp", amount: int = 1):
 		self.name = name
 		self.itemType = itemType
 		self.cost = cost
@@ -11,6 +11,10 @@ class Item:
 			costType = "cp"
 		self.costType = costType
 		self.amount = amount
+
+
+	def __lt__(self, other):
+		return self.getName() < other.getName()
 
 		
 	def printItem(self):

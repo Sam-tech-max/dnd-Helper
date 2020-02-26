@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Backgrounds",
-    "\\Equipment",
-    "\\Utility"
+    "\\Classes",
+    "\\Equipment"
   ],
-  "SelectedNode": "\\Backgrounds\\ToolPro.py",
+  "SelectedNode": "\\Classes\\Barbarian.py",
   "PreviewInSolutionExplorer": false
 }

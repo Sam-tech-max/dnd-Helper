@@ -1,6 +1,6 @@
 class Stat:
-	def __init__(self, name="strength",  score=10, hasProficiency=False,
-	mod=0):
+	def __init__(self, name: str = "strength",  score: int = 10,
+			  hasProficiency: bool = False, mod: int = 0):
 		self.name = name
 		self.hasProficiency = hasProficiency
 		self.score = score
@@ -19,28 +19,28 @@ class Stat:
 # stat class
 # //---------// //---------// //---------//
 		
-	def getHasProficiency(self):
+	def getHasProficiency(self) -> bool:
 		return self.hasProficiency
 		
-	def setHasProficiency(self, hasProficiency):
+	def setHasProficiency(self, hasProficiency: bool):
 		self.hasProficiency = hasProficiency
 		
-	def getMod(self):
+	def getMod(self) -> int:
 		return self.mod
 		
-	def setMod(self, mod):
+	def setMod(self, mod: int):
 		self.mod = mod
 		
-	def getName(self):
+	def getName(self) -> str:
 		return self.name
 		
-	def setName(self, name):
+	def setName(self, name: str):
 		self.name = name
 		
-	def getScore(self):
+	def getScore(self) -> int:
 		return self.score
 		
-	def setScore(self, score):
+	def setScore(self, score: int):
 		self.score = score
 
 
